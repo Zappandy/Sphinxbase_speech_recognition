@@ -3,9 +3,22 @@ from experiment_two import ExperimentTwo
 from experiment_three import ExperimentThree
 from experiment_four import ExperimentFour
 import pandas as pd  # pip3 install pandas
+import argparse
+
+def init_argparse() -> argparse.ArgumentParser:
+    
+    answers = ["yes", "no"]
+    parser = argparse.ArgumentParser(
+             description="Runs statistical ASR experiments",
+             usage="%(prog)s [OPTION]...")
+    
+    parser.add_argument("--save", "-s", default="no", type=str, choices=answers, required=True,
+                         help="Choose yes or no to save file as CSV using pandas")
+    return parser
 
 
-def main():
+
+def main(save):
     print('-'*5 + "Experiment 1" '-'*5)
     res_dict = {}
     not_knownseq_rules = ["digits.seq_unk", "n_gram"]
@@ -16,7 +29,6 @@ def main():
     res_dict.setdefault("known_seqs", known_Seq.overall_known_seq())
     exp1_df = pd.DataFrame(res_dict).T
     exp1_idx = [1 for i in range(exp1_df.shape[0])]
-    #df.insert(0, )
 
     print('-'*5 + "Experiment 2" '-'*5)
     res_dict = {}
@@ -46,7 +58,11 @@ def main():
     total_df.reset_index(drop=True)
     total_df.insert(0, "experiment", exp_idx)
     total_df.insert(1, "setup", new_idx)
-    total_df.to_csv("ASR_Experimental_Results.csv", index=False)
+    print(total_df)
+    if save != "no":
+        total_df.to_csv("ASR_Experimental_Results.csv", index=False)
 
 if __name__ == "__main__":
-    main()
+    parser = init_argparse()
+    args = parser.parse_args()
+    main(args.save)

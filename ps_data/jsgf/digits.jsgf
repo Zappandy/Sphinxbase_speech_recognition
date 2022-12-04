@@ -1,0 +1,17 @@
+#JSGF V1.0;
+
+/**
+ * JSGF Grammar for Digits example
+ */
+
+grammar digits;
+
+public <seq1> = <nums>;
+
+public <seq3> = <nums> <nums> <nums>;
+
+public <seq5> = <nums> <nums> <nums> <nums> <nums>;
+
+public <seq_unk> = <nums>+;
+
+<nums> = one | two | three | four | five | six | seven | eight | nine | zero | oh;

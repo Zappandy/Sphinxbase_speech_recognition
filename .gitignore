@@ -2,5 +2,6 @@ test_digits.py
 test_folder.py
 test_gofwd.py
 /speech_labs_env
+/outputs
 # ignore pngs
 *.png

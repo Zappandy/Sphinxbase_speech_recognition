@@ -1,0 +1,4 @@
+wheel
+pocketsphinx==0.1.15
+asr-evaluation==2.0.4
+pandas==1.5.2
