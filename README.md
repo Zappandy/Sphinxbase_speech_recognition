@@ -2,6 +2,43 @@
 
 Create a *td_corpus_digit* in the main directory. Therein 4 folders should contain different noise levels and speaker per folder. Each speaker, regardless of sequence, must contain reference and raw audio files.
 
+```bash
+td_corpus_digits
+├── SNR05dB
+│   └── man
+│       ├── seq1digit_200_files
+│       ├── seq3digits_100_files
+│       └── seq5digits_100_files
+├── SNR15dB
+│   └── man
+│       ├── seq1digit_200_files
+│       ├── seq3digits_100_files
+│       └── seq5digits_100_files
+├── SNR25dB
+│   └── man
+│       ├── seq1digit_200_files
+│       ├── seq3digits_100_files
+│       └── seq5digits_100_files
+└── SNR35dB
+    ├── boy
+    │   ├── seq1digit_200_files
+    │   ├── seq3digits_100_files
+    │   └── seq5digits_100_files
+    ├── girl
+    │   ├── seq1digit_200_files
+    │   ├── seq3digits_100_files
+    │   └── seq5digits_100_files
+    ├── man
+    │   ├── seq1digit_200_files
+    │   ├── seq3digits_100_files
+    │   └── seq5digits_100_files
+    └── woman
+        ├── seq1digit_200_files
+        ├── seq3digits_100_files
+        └── seq5digits_100_files
+```
+
+
 Run this project by simply passing...
 ```python
 python main.py -s no
@@ -26,5 +63,14 @@ This project uses an older version of pocketsphinx and pandas for storing the ou
 
 # Important files
 
-Model, grammar, and lexicons can be found in the ps_data directory. 
+Model, grammar, and lexicons can be found in the ps\_data directory. 
+```bash
+ps_data
+├── example
+├── jsgf
+├── lex
+├── lm
+└── model
+    └── en-us
+```
 
