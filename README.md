@@ -1,5 +1,16 @@
 # How to run?
 
+Run this project by simply passing...
+```python
+python main.py -s no
+```
+If you want to save the output in a csv, change the argument from *no* to *yes*. The python script has been created with a helpful informative message in case of passing the wrong value to the -s option, so do not fret.
+
+Output csv file is not stored in the outputs directory as the references, hypotheses, and results files are stored in said folder. The csv will always be stored in the main directory.
+
+Please only run this script from the main directory as paths have been defined based on current working tree.
+
+
 Create a *td_corpus_digit* in the main directory. Therein 4 folders should contain different noise levels and speaker per folder. Each speaker, regardless of sequence, must contain reference and raw audio files.
 
 ```bash
@@ -38,17 +49,6 @@ td_corpus_digits
         └── seq5digits_100_files
 ```
 
-
-Run this project by simply passing...
-```python
-python main.py -s no
-```
-If you want to save the output in a csv, change the argument from *no* to *yes*. The python script has been created with a helpful informative message in case of passing the wrong value to the -s option, so do not fret.
-
-Output csv file is not stored in the outputs directory as the references, hypotheses, and results files are stored in said folder. The csv will always be stored in the main directory.
-
-Please only run this script from the main directory as paths have been defined based on current working tree.
-
 # Requirements
 
 This project has only been tested in unix-based systems. Do not run from windows, unless you are on WSL. Please remember to install the following packages on your linux distribution to run the word error rates
@@ -76,4 +76,4 @@ ps_data
 
 # Discussion
 
-A report on the results can be found in the *report* directory.
+An OUTDATED report on the results can be found in the *report* directory. The visualization script was not added to this repository, but if requested can be shared.
